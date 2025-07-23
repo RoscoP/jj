@@ -104,6 +104,7 @@ pub mod signing;
 // in the lib it should be moved to the examples (e.g
 // "examples/simple-backend/").
 pub mod simple_backend;
+pub mod perforce_backend;
 pub mod simple_op_heads_store;
 pub mod simple_op_store;
 pub mod ssh_signing;

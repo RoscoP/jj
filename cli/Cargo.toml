@@ -75,6 +75,7 @@ jj-lib = { workspace = true }
 maplit = { workspace = true }
 once_cell = { workspace = true }
 os_pipe = { workspace = true }
+p4-cmd-api = { workspace = true }
 pest = { workspace = true }
 pest_derive = { workspace = true }
 pollster = { workspace = true }
@@ -117,11 +118,12 @@ testutils = { workspace = true }
 jj-cli = { path = ".", features = ["test-fakes"], default-features = false }
 
 [features]
-default = ["watchman", "git"]
+default = ["watchman", "git", "p4"]
 bench = ["dep:criterion"]
 git = ["jj-lib/git", "dep:gix"]
 test-fakes = ["jj-lib/testing"]
 watchman = ["jj-lib/watchman"]
+p4 = ["jj-lib/p4"]
 
 [package.metadata.binstall]
 # The archive name is jj, not jj-cli. Also, `cargo binstall` gets

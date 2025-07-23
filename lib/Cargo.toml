@@ -52,6 +52,7 @@ itertools = { workspace = true }
 jj-lib-proc-macros = { workspace = true }
 maplit = { workspace = true }
 once_cell = { workspace = true }
+p4-cmd-api = { workspace = true }
 pest = { workspace = true }
 pest_derive = { workspace = true }
 pollster = { workspace = true }
@@ -98,6 +99,7 @@ default = ["git"]
 git = ["dep:gix"]
 watchman = ["dep:watchman_client"]
 testing = ["git"]
+p4 = []
 
 [lints]
 workspace = true

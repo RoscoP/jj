@@ -37,6 +37,8 @@ mod log;
 mod new;
 mod next;
 mod operation;
+#[cfg(feature = "p4")]
+mod p4;
 mod parallelize;
 mod prev;
 mod rebase;
@@ -121,6 +123,9 @@ enum Command {
     #[command(subcommand)]
     #[command(visible_alias = "op")]
     Operation(operation::OperationCommand),
+    #[cfg(feature = "p4")]
+    #[command(subcommand)]
+    P4(p4::P4Command),
     Parallelize(parallelize::ParallelizeArgs),
     Prev(prev::PrevArgs),
     Rebase(rebase::RebaseArgs),
@@ -184,6 +189,8 @@ pub fn run_command(ui: &mut Ui, command_helper: &CommandHelper) -> Result<(), Co
         Command::Next(args) => next::cmd_next(ui, command_helper, args),
         Command::Evolog(args) => evolog::cmd_evolog(ui, command_helper, args),
         Command::Operation(args) => operation::cmd_operation(ui, command_helper, args),
+        #[cfg(feature = "p4")]
+        Command::P4(args) => p4::cmd_p4(ui, command_helper, args),
         Command::Parallelize(args) => parallelize::cmd_parallelize(ui, command_helper, args),
         Command::Prev(args) => prev::cmd_prev(ui, command_helper, args),
         Command::Rebase(args) => rebase::cmd_rebase(ui, command_helper, args),

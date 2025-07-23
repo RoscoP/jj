@@ -2370,6 +2370,7 @@ dependencies = [
  "maplit",
  "once_cell",
  "os_pipe",
+ "p4-cmd-api",
  "pest",
  "pest_derive",
  "pollster",
@@ -2428,6 +2429,7 @@ dependencies = [
  "maplit",
  "num_cpus",
  "once_cell",
+ "p4-cmd-api",
  "pest",
  "pest_derive",
  "pollster",
@@ -2842,6 +2844,19 @@ name = "overload"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
+
+[[package]]
+name = "p4-cmd-api"
+version = "0.2.1"
+dependencies = [
+ "anyhow",
+ "log",
+ "once_cell",
+ "regex",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.12",
+]
 
 [[package]]
 name = "parking_lot"
